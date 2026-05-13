@@ -8,11 +8,11 @@ if(isset($_SESSION['user_id'])) {
     exit();
 }
 
-// SMTP 邮件设置
-$smtp_server = "smtp.gmail.com";  
-$smtp_port = 465;  
-$sender_email = "aslm2l1k123@gmail.com";
-$sender_password = "lcfypbwumaufqnlj";
+// SMTP 邮件设置(部署时通过环境变量传入,不要把密码写死在代码里)
+$smtp_server   = getenv('SMTP_HOST')     ?: 'smtp.gmail.com';
+$smtp_port     = getenv('SMTP_PORT')     ?: 465;
+$sender_email  = getenv('SMTP_USER')     ?: '';
+$sender_password = getenv('SMTP_PASS')   ?: '';
 
 $error = '';
 $success = '';

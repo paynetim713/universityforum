@@ -6,11 +6,11 @@ if(isset($_SESSION['user_id'])) {
     header("Location: forum.php");
     exit();
 }
-//smtp 邮件设置
-$smtp_server = "smtp.gmail.com";  
-$smtp_port = 465;  
-$sender_email = "aslm2l1k123@gmail.com";
-$sender_password = "lcfypbwumaufqnlj";  //
+// SMTP 邮件设置(走环境变量,部署时注入)
+$smtp_server   = getenv('SMTP_HOST')   ?: 'smtp.gmail.com';
+$smtp_port     = getenv('SMTP_PORT')   ?: 465;
+$sender_email  = getenv('SMTP_USER')   ?: '';
+$sender_password = getenv('SMTP_PASS') ?: '';
 
 $error = '';
 $success = '';

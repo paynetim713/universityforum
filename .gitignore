@@ -1,0 +1,27 @@
+# 运行时生成的目录
+uploads/*
+!uploads/.gitkeep
+cache/*
+!cache/.gitkeep
+
+# PHP / 系统
+*.log
+.htaccess.local
+*.bak
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# 环境变量(SMTP / DB 凭据走 env)
+.env
+.env.local
+
+# Python 临时
+__pycache__/
+*.pyc
